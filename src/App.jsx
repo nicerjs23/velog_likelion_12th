@@ -1,33 +1,31 @@
 import { styled, ThemeProvider } from "styled-components";
-
 import { Outlet } from "react-router-dom";
+// 추가된코드
+import Header from "./components/Header";
+import React from "react";
+
 
 const Wrapper = styled.div`
-  width: 100vw;
-  background-color: white;
-
-  * {
+  width: 100%;
+  background-color: #F8F9FA;
+  min-height: 100vh;
+  /* * {
     border: 1px solid black;
-  }
+  } */
 `;
 
 const Layout = () => {
   return (
-    <>
-      <Wrapper>
-        <h3>오늘 세션도 화이팅</h3>
-        <Outlet />
-      </Wrapper>
-    </>
+    <Wrapper >
+      
+      <Header />
+      <Outlet />
+    </Wrapper>
   );
 };
 
 function App() {
-  return (
-    <>
-      <Layout />
-    </>
-  );
+  return <Layout />;
 }
 
 export default App;
