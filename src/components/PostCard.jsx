@@ -99,7 +99,7 @@ const PostCard = ({ post }) => {
             <Author><span>{post.createdAt}</span></Author>
           </Content>
           <CardFooter>
-            <span>by <span>{post.creater}</span></span>
+            <span>by <span>{post.author}</span></span>
             <span><FontAwesomeIcon icon={faHeartSolid} /> 161</span>
           </CardFooter>
         </PostLink>

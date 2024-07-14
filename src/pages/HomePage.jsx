@@ -23,11 +23,10 @@ import { Link } from "react-router-dom";
 import { dummy_data } from "../data/dummy_data";
 import styled from 'styled-components'; // styled-components 불러오기
 
-import Header from '../components/Header';
 import PostCard from "../components/PostCard";
 
 const HomePageWrapper = styled.div`
-  padding: 20px;
+  padding: 30px 20px;
   display: flex;
   flex-flow: row wrap; 
   gap: 20px;
@@ -41,6 +40,7 @@ const HomePageWrapper = styled.div`
 
 const HomePage = () => {
   return (
+    
     <HomePageWrapper>
       {dummy_data.map(post => (
         <PostCard key={post.postID} post={post} />

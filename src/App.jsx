@@ -2,6 +2,8 @@ import { styled, ThemeProvider } from "styled-components";
 import { Outlet } from "react-router-dom";
 // 추가된코드
 import Header from "./components/Header";
+import PostDetailHeader from "./components/PostDetailHeader";
+import { useLocation } from "react-router-dom";
 import React from "react";
 
 
@@ -15,10 +17,12 @@ const Wrapper = styled.div`
 `;
 
 const Layout = () => {
+  const location = useLocation();
+  const isPostDetailPage = location.pathname.includes("detail"); // 경로를 'detail'로 확인
+
   return (
     <Wrapper >
-      
-      <Header />
+      {isPostDetailPage ? <PostDetailHeader /> : <Header />}
       <Outlet />
     </Wrapper>
   );

@@ -1,8 +1,12 @@
 import React from "react";
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faBell, faHome, faUser,faMagnifyingGlass as faMagnifyingGlassSolid } from '@fortawesome/free-solid-svg-icons';
-import { faBell as faBellRegular } from '@fortawesome/free-regular-svg-icons';
+import { faMagnifyingGlass as faMagnifyingGlassSolid ,faRss,
+          faArrowTrendUp,faEllipsisV, faCaretDown
+} from '@fortawesome/free-solid-svg-icons';
+import { faBell as faBellRegular,
+        faClock as faClockRegular,
+      } from '@fortawesome/free-regular-svg-icons';
 
 const HeaderWrapper = styled.div`
     display: flex;
@@ -97,10 +101,60 @@ const Header2 =styled.div`
   align-items: center;
 `;
 const IconNav =styled.div`
-  
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  height: 48px;
+  gap:20px;
 `;
-const Filter =styled.div`
-  
+
+const IconNavBox = styled.div`
+  display: flex;
+  align-items: center;
+  color: #868e96;
+  font-size: 18px;
+  vertical-align: baseline;
+  color: ${props => (props.active ? '#212529' : '#868e96')};
+  //active로 props에 따라 변경가능 이거 기억해두기 
+  border-bottom: ${props => (props.active ? '2px solid #212529' : 'none')};
+  font-weight: ${props => (props.active ? 'bold' : 'normal')};
+`;
+const FilterWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  height: 32px;
+`;
+
+const FilterBox = styled.div`
+  background: #fff; /* 임의의 색상 사용 */
+  height: 32px;
+  width: 90px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  font-weight: 600;
+  color: #495057; /* 임의의 색상 사용 */
+  font-size: 14px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+`;
+const StyledIcon = styled(FontAwesomeIcon)`
+  /* width: 24px;
+  height:24px; */
+  font-size: 20px;
+  color: #868e96; /* 임의의 색상 */
+  cursor: pointer; /* 포인터로 변경 */
+  margin: 0px 8px 0px 0px;
+`;
+const Choice = styled(FontAwesomeIcon)`
+  font-size: 20px;
+  color: #212529; /* 임의의 색상 */
+  margin: 0px 8px 0px 0px;
 `;
 const Header = () => {
     return (
@@ -117,11 +171,17 @@ const Header = () => {
         </Header1>
         <Header2>
           <IconNav>
-            
+            <IconNavBox active="true"><Choice icon={faArrowTrendUp} />트렌딩</IconNavBox>
+            <IconNavBox><StyledIcon icon={faClockRegular} />최신</IconNavBox>
+            <IconNavBox><StyledIcon icon={faRss} />피드</IconNavBox>
           </IconNav>
-          <Filter>
-
-          </Filter>
+          <FilterWrapper>
+            <FilterBox>
+              이번 주
+              <FontAwesomeIcon icon={faCaretDown} />
+            </FilterBox>
+            <StyledIcon icon={faEllipsisV} />
+          </FilterWrapper>
         </Header2>
         
 

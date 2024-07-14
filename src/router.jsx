@@ -9,7 +9,8 @@ const router = createBrowserRouter([
     path: "/", //앱을 렌더링한다? 
     element: <App />,
     children: [{ path: "/", element: <HomePage /> },
-      { path: "detail/:postId", element: <PostDetailPage/> }
+      { path: "detail/:postId", element: <PostDetailPage/> },
+      
     ],
   },
 ]);

@@ -14,20 +14,28 @@ import { dummy_data } from "../data/dummy_data";
 import styled from 'styled-components';
 
 const Container = styled.div`
+    display: flex;
+    flex-direction: column;
     padding: 20px;
-    max-width: 800px; // 최대 너비 설정
-    margin: 0 auto; // 중앙 정렬
+    width: 100%;
+    align-items: center;
+    max-width: 1000px; // 최대 너비 설정
+    margin: auto auto; // 중앙 정렬
 `;
 
 const Title = styled.h1`
+    display: flex;
+    width: 768px;
     font-size: 24px;
     color: #333;
 `;
 
 const Thumbnail = styled.img`
     width: 100%;
-    max-width: 600px;
-    height: auto;
+    max-width: 768px;
+    height: 512px;
+    margin: 32px 0px 0px;
+    object-fit: cover;
 `;
 
 const Content = styled.p`
@@ -50,10 +58,10 @@ function PostDetailPage() {
 
     return (
         <Container>
-        <Title>{post.title}</Title>
-        <Thumbnail src={post.thumbnail} alt={post.title} />
-        <Content>{post.content}</Content>
-        <CreatedAt>{post.createdAt}</CreatedAt>
+            <Title>{post.title}</Title>
+            <Thumbnail src={post.thumbnail} alt={post.title} />
+            <Content>{post.content}</Content>
+            <CreatedAt>{post.createdAt}</CreatedAt>
         </Container>
     );
 }
