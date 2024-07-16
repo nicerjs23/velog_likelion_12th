@@ -51,18 +51,18 @@ const TextContent = styled.div`
 const Title = styled.span`
     /* font-family: "Fira Mono", monospace; */
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     color: #333;
     margin: 0 0 4px;
 `;
 const Text = styled.span`
   color: #464545;
-  font-size: 15px;
+  font-size: 14px;
   margin: 0 0 10px;
 `
 const Author = styled.span`
   margin:0;
-  font-size: 14px;
+  font-size: 12px;
   color: #808080;
 `;
 
@@ -75,9 +75,41 @@ const Author = styled.span`
 
 const CardFooter=styled.div`
   display: flex;
+
   justify-content: space-between;
   padding: 10px 16px;
   border-top: solid 1px #f1f3f5;
+
+  .profile{
+    display: flex;
+    align-items: center;
+    gap:8px;
+  }
+  
+  .profilediv{
+    border-radius: 50%;
+    background-color: #b9b9b9;
+    width: 24px;
+    height: 24px;
+  }
+  .by{
+    color:#868e96;
+    font-size: 12px;
+  }
+  .name{
+    color: #212529;
+    font-weight: bold;
+  }
+  .hCount{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap:8px;
+  }
+  .heart{
+    width: 12px;
+    height:12px;
+  }
 `;
 
 const PostLink = styled(Link)`
@@ -99,8 +131,12 @@ const PostCard = ({ post }) => {
             <Author><span>{post.createdAt}</span></Author>
           </Content>
           <CardFooter>
-            <span>by <span>{post.author}</span></span>
-            <span><FontAwesomeIcon icon={faHeartSolid} /> 161</span>
+            <div class="profile">
+              <div class="profilediv"></div>
+              <span class="by">by <span class="name">{post.author}</span></span>
+            </div>
+            
+            <span class="hCount"><FontAwesomeIcon class="heart" icon={faHeartSolid} /> 161</span>
           </CardFooter>
         </PostLink>
       </Card>

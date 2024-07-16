@@ -31,7 +31,7 @@ const HomePageWrapper = styled.div`
   flex-flow: row wrap; 
   gap: 20px;
   justify-content: center; // 중앙 정렬
-
+  /* background-color: #F8F9FA; */
   @media (max-width: 768px) {
     padding: 10px;
     gap: 10px;

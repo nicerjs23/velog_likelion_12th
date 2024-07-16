@@ -10,6 +10,8 @@ import React from "react";
 const Wrapper = styled.div`
   width: 100%;
   background-color: #F8F9FA;
+  background-color: 
+    ${(props) => (props.isPostDetailPage ? 'white' : '#F8F9FA')};
   min-height: 100vh;
   /* * {
     border: 1px solid black;
@@ -21,7 +23,7 @@ const Layout = () => {
   const isPostDetailPage = location.pathname.includes("detail"); // 경로를 'detail'로 확인
 
   return (
-    <Wrapper >
+    <Wrapper  isPostDetailPage={isPostDetailPage}>
       {isPostDetailPage ? <PostDetailHeader /> : <Header />}
       <Outlet />
     </Wrapper>

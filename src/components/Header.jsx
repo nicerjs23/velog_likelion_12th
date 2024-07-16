@@ -14,7 +14,7 @@ const HeaderWrapper = styled.div`
     margin: 0 auto;
 
     max-width: 1000px;
-
+    /* background-color: #F8F9FA; */
     @media (max-width: 768px) {
         flex-direction: column;
         align-items: flex-start;
